@@ -63,3 +63,28 @@ if (mobileMenuBtn) {
         }
     });
 }
+
+// Reveal Elements on Scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: unobserve after animating to only animate once
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal-up').forEach(el => {
+        observer.observe(el);
+    });
+    
+    // Trigger hero reveal immediately
+    setTimeout(() => {
+        document.querySelectorAll('header .reveal-up').forEach(el => el.classList.add('active'));
+    }, 100);
+});

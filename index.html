@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MZ Auto | Exklusive Fahrzeugaufbereitung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#050505',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gradient-animate">
@@ -60,62 +78,95 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative h-[80vh] flex flex-col items-center justify-center text-center px-4">
-        <div class="parallax-shape w-96 h-96 top-20 -left-20"></div>
-        <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tight">MZ AUTO</h1>
-        <p class="text-zinc-400 text-xl md:text-2xl max-w-2xl font-light">
-            Perfektion in jedem Detail. In Sollenau.
-        </p>
-        <div class="mt-10">
-            <button class="btn-glow bg-white text-black px-10 py-4 font-bold rounded-full transition-transform active:scale-95 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                TERMIN VEREINBAREN
-            </button>
+    <header class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden hero-section">
+        <!-- Abstract Animated Background Element -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-40">
+            <div class="w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-brandglow/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
+        </div>
+        
+        <div class="parallax-shape w-96 h-96 top-40 -left-20 bg-brandglow/10"></div>
+        <div class="parallax-shape w-80 h-80 bottom-20 right-10 bg-white/5 shadow-2xl"></div>
+        
+        <div class="z-10 flex flex-col items-center reveal-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 text-xs font-medium tracking-widest uppercase text-zinc-300 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                <span class="w-2 h-2 rounded-full bg-brandglow animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
+                Premium Fahrzeugaufbereitung
+            </div>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-4 tracking-tighter font-heading text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-200 to-zinc-600 hero-title-glow pb-2">
+                MZ AUTO
+            </h1>
+            <p class="text-zinc-400 text-lg md:text-2xl max-w-2xl font-light mb-12 leading-relaxed">
+                Perfektion in jedem Detail. <br class="hidden md:block"/>In Sollenau.
+            </p>
+            <div class="mt-4 flex flex-col sm:flex-row gap-6 w-full sm:w-auto justify-center">
+                <button class="btn-premium bg-white text-black px-10 py-4 font-bold rounded-full transition-all active:scale-95 text-sm tracking-widest uppercase font-heading hover:bg-zinc-200 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                    Termin vereinbaren
+                </button>
+                <button class="btn-outline px-10 py-4 font-bold rounded-full transition-all active:scale-95 text-sm tracking-widest uppercase font-heading border border-white/20 hover:bg-white/10 text-white backdrop-blur-md">
+                    Portfolio ansehen
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Services Grid -->
-    <section class="max-w-7xl mx-auto py-24 px-8">
-        <h2 class="text-zinc-500 uppercase tracking-widest text-sm mb-12">Unsere Leistungen</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    <section class="max-w-7xl mx-auto py-32 px-8 relative z-10">
+        <div class="text-center mb-20 reveal-up">
+            <h2 class="text-brandglow uppercase tracking-[0.3em] text-sm mb-4 font-medium">Unsere Leistungen</h2>
+            <p class="text-3xl md:text-5xl font-heading font-bold text-white">Was wir für dich tun.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             
             <!-- Card 1 -->
-            <div class="service-card p-8 rounded-2xl group flex flex-col">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-500">✨</div>
-                <h3 class="text-xl font-bold mb-3">Aufbereitung</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
-                    Umfassende Interieur- und Exterieurpflege auf höchstem Niveau. Wir bieten gründliche Handwäsche, schonende Tiefenreinigung von Polstern und Leder, professionelle Felgenreinigung sowie schonende Motorwäsche. Jedes Detail zählt.
+            <div class="service-card p-10 rounded-3xl group flex flex-col reveal-up" style="transition-delay: 100ms;">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-brandglow/50 transition-all duration-500 shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-brandglow/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <svg class="w-6 h-6 text-brandglow relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 font-heading">Aufbereitung</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8 flex-grow">
+                    Umfassende Interieur- und Exterieurpflege auf höchstem Niveau. Tiefe Reinigung und Pflege für jedes Detail.
                 </p>
-                <a href="#" class="text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors mt-auto">Mehr erfahren &rarr;</a>
+                <a href="#" class="text-xs uppercase tracking-widest text-white/50 font-bold hover:text-white transition-colors mt-auto flex items-center gap-2 group/link">Mehr erfahren <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
             </div>
 
             <!-- Card 2 -->
-            <div class="service-card p-8 rounded-2xl group flex flex-col">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-500">🛡️</div>
-                <h3 class="text-xl font-bold mb-3">Polieren & Versiegelung</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
-                    Sichere Entfernung von Kratzern, Hologrammen und Gebrauchsspuren für einen makellosen Lack. Mit unserer mehrstufigen High-End-Politur und anschließender Keramikversiegelung sorgen wir für maximalen Tiefenglanz und dauerhaften Schutz.
+            <div class="service-card p-10 rounded-3xl group flex flex-col reveal-up" style="transition-delay: 200ms;">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-brandglow/50 transition-all duration-500 shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-brandglow/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <svg class="w-6 h-6 text-brandglow relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 font-heading">Polieren & Versiegelung</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8 flex-grow">
+                    High-End-Politur und Keramikversiegelung für maximalen Tiefenglanz und dauerhaften Lackschutz.
                 </p>
-                <a href="#" class="text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors mt-auto">Mehr erfahren &rarr;</a>
+                <a href="#" class="text-xs uppercase tracking-widest text-white/50 font-bold hover:text-white transition-colors mt-auto flex items-center gap-2 group/link">Mehr erfahren <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
             </div>
 
             <!-- Card 3 -->
-            <div class="service-card p-8 rounded-2xl group flex flex-col">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-500">🕶️</div>
-                <h3 class="text-xl font-bold mb-3">Scheibentönung</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
-                    Hochwertige und absolut passgenaue UV-Schutzfolien, professionell appliziert. Das sorgt für eine exklusive Optik, deutlich mehr Privatsphäre und eine spürbare Hitzeabweisung im Fahrzeuginnenraum.
+            <div class="service-card p-10 rounded-3xl group flex flex-col reveal-up" style="transition-delay: 300ms;">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-brandglow/50 transition-all duration-500 shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-brandglow/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <svg class="w-6 h-6 text-brandglow relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 font-heading">Scheibentönung</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8 flex-grow">
+                    Hochwertige UV-Schutzfolien, absolut passgenau. Mehr Privatsphäre und spürbare Hitzeabweisung.
                 </p>
-                <a href="#" class="text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors mt-auto">Mehr erfahren &rarr;</a>
+                <a href="#" class="text-xs uppercase tracking-widest text-white/50 font-bold hover:text-white transition-colors mt-auto flex items-center gap-2 group/link">Mehr erfahren <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
             </div>
 
             <!-- Card 4 -->
-            <div class="service-card p-8 rounded-2xl group flex flex-col">
-                <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-500">🎨</div>
-                <h3 class="text-xl font-bold mb-3">Wrapping & PPF</h3>
-                <p class="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
-                    Premium-Folierungen für komplett neue Farbdesigns sowie Teil- oder Vollfolierungen. Zudem bieten wir hochtransparente Lackschutzfolierungen (PPF) an, die den Lack effektiv vor Steinschlägen und Kratzern bewahren.
+            <div class="service-card p-10 rounded-3xl group flex flex-col reveal-up" style="transition-delay: 400ms;">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-white/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:border-brandglow/50 transition-all duration-500 shadow-xl relative overflow-hidden">
+                    <div class="absolute inset-0 bg-brandglow/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <svg class="w-6 h-6 text-brandglow relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 font-heading">Wrapping & PPF</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8 flex-grow">
+                    Premium-Folierungen für neue Farbdesigns sowie PPF Lackschutzfolierungen gegen Steinschläge.
                 </p>
-                <a href="#" class="text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors mt-auto">Mehr erfahren &rarr;</a>
+                <a href="#" class="text-xs uppercase tracking-widest text-white/50 font-bold hover:text-white transition-colors mt-auto flex items-center gap-2 group/link">Mehr erfahren <span class="group-hover/link:translate-x-1 transition-transform">&rarr;</span></a>
             </div>
 
         </div>
